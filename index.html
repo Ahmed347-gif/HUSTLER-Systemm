@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUSTLER - Product Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="" alt="HUSTLER Logo" class="logo-image" id="logo-image">
+                <label class="upload-label">
+                    <i class="fas fa-upload"></i>
+                    Upload Logo
+                    <input type="file" id="logo-upload" accept="image/*" style="display: none;">
+                </label>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <i class="fas fa-box"></i>
+                    <span>Total Products: <span id="total-products">0</span></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Total Amount: EGP: <span id="total-amount">0</span></span>
+                </div>
+            </div>
+            <h1>HUSTLER <span>Product Management System</span></h1>
+        </header>
+
+        <div class="crud-container">
+            <div class="form-container">
+                <h2>Add New Product</h2>
+                <form id="product-form">
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Price</label>
+                        <input type="number" id="product-price"  required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">نوع المنتج</label>
+                        <select id="product-category" required>
+                            <option value="">اختر النوع </option>
+                            <option value="اوفر سايز">اوفر سايز</option>
+                            <option value="تيشيرت بولو">بولو</option>
+                            <option value="قميص صيفي">قميص صيفي</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="buyer-name">Buyer Name</label>
+                        <input type="text" id="buyer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-quantity">Quantity</label>
+                        <input type="number" id="product-quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-date">Order Date</label>
+                        <input type="date" id="order-date" required>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-plus"></i>
+                        Add Product
+                    </button>
+                </form>
+            </div>
+
+            <div class="products-container">
+                <h2>Products List</h2>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                </div>
+                <div class="table-container">
+                    <table id="productsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Buyer</th>
+                                <th>Order Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsList">
+                            <!-- Products will be displayed here -->
+                        </tbody>
+                    </table>
+                    <div class="table-footer">
+                        <button class="btn-delete-all" onclick="deleteAllProducts()">
+                            <i class="fas fa-trash"></i>
+                            Delete All
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    
+</body>
+</html> 
